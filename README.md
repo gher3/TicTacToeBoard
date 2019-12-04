@@ -1,8 +1,6 @@
 # TicTacToeBoard
 
-[![Build Status](https://travis-ci.org/gher3/TicTacToeBoard.svg?branch=master)](https://travis-ci.org/gher3/TicTacToeBoard)
-
-[![Coverage Status](https://coveralls.io/repos/github/gher3/TicTacToeBoard/badge.svg?branch=master)](https://coveralls.io/github/gher3/TicTacToeBoard?branch=master)
+[![Build Status](https://travis-ci.org/gher3/TicTacToeBoard.svg?branch=master)](https://travis-ci.org/gher3/TicTacToeBoard) [![Coverage Status](https://coveralls.io/repos/github/gher3/TicTacToeBoard/badge.svg?branch=master)](https://coveralls.io/github/gher3/TicTacToeBoard?branch=master)
 
 ## Associated Enumerated Types
 `Piece` has four possible values: `X`,`O`,`Invalid`, and `Blank`
