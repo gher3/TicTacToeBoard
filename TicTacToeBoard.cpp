@@ -43,7 +43,7 @@ Piece TicTacToeBoard::placePiece(int row, int column)
     if(row > 3 || column > 3){
       return Invalid;
     }
-    if(board[row][column] != NULL){
+    if(board[row][column] != Blank){
       return board[row][column];
     }
     board[row][column] = turn;
@@ -60,7 +60,7 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 **/
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
-  if(board[row][column] == NULL){
+  if(board[row][column] == Blank){
     return Blank;
   }
   if(row > 3 || column > 3){
@@ -101,7 +101,7 @@ Piece TicTacToeBoard::getWinner()
   }
   for(int i = 0; i < BOARDSIZE; i++){
     for(int j = 0; j < BOARDSIZE; j++){
-      if(board[i][j] == NULL){
+      if(board[i][j] == Blank){
         return Invalid;
       }
     }
