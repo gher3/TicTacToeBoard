@@ -19,4 +19,4 @@ script:
   - ./TicTacToeBoardTest
 
 after_success: 
-  - coveralls --excludes lib --exclude tests --gcov-options "/-lp"
+  - coveralls --excludes *Test.cpp --exclude ${GTEST_DIR} --gcov-options '\-lpbc'
