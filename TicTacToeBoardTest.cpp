@@ -24,4 +24,14 @@ TEST(TicTacToeBoardTest, unitTestName)
 TEST(TicTacToeBoardTest, toggleTurnTest){
 	TicTacToeBoard tttBoard;
 	ASSERT_EQ(tttBoard.toggleTurn(), O);
+	ASSERT_EQ(tttBoard.toggleTurn(), X);
 }
+
+TEST(TicTacToeBoardTest, placePieceTest){
+	TicTacToeBoard tttBoard;
+	ASSERT_EQ(tttBoard.placePiece(0, 0), X);
+	ASSERT_EQ(tttBoard.placePiece(2, 2), O);
+	ASSERT_EQ(tttBoard.placePiece(2, 3), Invalid);
+	ASSERT_EQ(tttBoard.placePiece(3, 2), Invalid);
+	ASSERT_EQ(tttBoard.placePiece(0, 0), X);
+})
