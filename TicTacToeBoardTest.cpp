@@ -31,7 +31,20 @@ TEST(TicTacToeBoardTest, placePieceTest){
 	TicTacToeBoard tttBoard;
 	ASSERT_EQ(tttBoard.placePiece(0, 0), X);
 	ASSERT_EQ(tttBoard.placePiece(2, 2), O);
+	ASSERT_EQ(tttBoard.placePiece(1, 1), X);
 	ASSERT_EQ(tttBoard.placePiece(2, 3), Invalid);
 	ASSERT_EQ(tttBoard.placePiece(3, 2), Invalid);
 	ASSERT_EQ(tttBoard.placePiece(0, 0), X);
+}
+
+TEST(TicTacToeBoardTest, getPieceTest){
+	TicTacToeBoard tttBoard;
+	tttBoard.placePiece(1, 2);
+	tttBoard.placePiece(0, 0);
+	ASSERT_EQ(tttBoard.getPiece(1, 2), X);
+	ASSERT_EQ(tttBoard.getPiece(0, 0), O);
+	ASSERT_EQ(tttBoard.getPiece(1, 1), Blank);
+	ASSERT_EQ(tttBoard.getPiece(0, 2), Blank);
+	ASSERT_EQ(tttBoard.getPiece(0, -1), Invalid);
+	ASSERT_EQ(tttBoard.getPiece(2, 3), Invalid);
 }
