@@ -35,6 +35,10 @@ TEST(TicTacToeBoardTest, placePieceTest){
 	ASSERT_EQ(tttBoard.placePiece(2, 3), Invalid);
 	ASSERT_EQ(tttBoard.placePiece(3, 2), Invalid);
 	ASSERT_EQ(tttBoard.placePiece(0, 0), X);
+	tttBoard.placePiece(2, 0); //O's turn
+	tttBoard.placePiece(1, 2); //X's turn
+	tttBoard.placePiece(2, 1); //O's turn; O wins
+	ASSERT_EQ(tttBoard.placePiece(0, 1), O); //X's turn but return O b/c O won
 }
 
 TEST(TicTacToeBoardTest, getPieceTest){
@@ -47,4 +51,6 @@ TEST(TicTacToeBoardTest, getPieceTest){
 	ASSERT_EQ(tttBoard.getPiece(0, 2), Blank);
 	ASSERT_EQ(tttBoard.getPiece(0, -1), Invalid);
 	ASSERT_EQ(tttBoard.getPiece(2, 3), Invalid);
+	ASSERT_EQ(tttBoard.getPiece(-1, 0), Invalid);
+	ASSERT_EQ(tttBoard.getPiece(3,1), Invalid);
 }
