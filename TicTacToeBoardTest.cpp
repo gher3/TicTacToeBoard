@@ -137,3 +137,17 @@ TEST(TicTacToeBoardTest, getWinnerBackSlashTest){
 	tttBoard.placePiece(2, 2); //X
 	ASSERT_EQ(tttBoard.getWinner(), X);
 }
+
+TEST(TicTacToeBoardTest, getWinnerNoWinnerTest){
+	TicTacToeBoard tttBoard;
+	tttBoard.placePiece(0, 0); //X
+	tttBoard.placePiece(0, 1); //O
+	tttBoard.placePiece(0, 2); //X
+	tttBoard.placePiece(1, 1); //O
+	tttBoard.placePiece(1, 0); //X
+	tttBoard.placePiece(2, 0); //O
+	tttBoard.placePiece(1, 2); //X
+	tttBoard.placePiece(2, 2); //O
+	tttBoard.placePiece(2, 1); //X
+	ASSERT_EQ(tttBoard.getWinner(), Blank); //no winners
+}
