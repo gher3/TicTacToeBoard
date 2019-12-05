@@ -54,3 +54,86 @@ TEST(TicTacToeBoardTest, getPieceTest){
 	ASSERT_EQ(tttBoard.getPiece(-1, 0), Invalid);
 	ASSERT_EQ(tttBoard.getPiece(3,1), Invalid);
 }
+
+TEST(TicTacToeBoardTest, getWinnerFirstRowTest){
+	TicTacToeBoard tttBoard;
+	tttBoard.placePiece(0, 0); //X
+	tttBoard.placePiece(2, 2); //O
+	tttBoard.placePiece(0, 1); //X
+	tttBoard.placePiece(2, 1); //O
+	tttBoard.placePiece(0, 2); //X wins
+	ASSERT_EQ(tttBoard.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerSecondRowTest){
+	TicTacToeBoard tttBoard;
+	tttBoard.placePiece(1, 0); //X
+	tttBoard.placePiece(2, 2); //O
+	tttBoard.placePiece(1, 1); //X
+	tttBoard.placePiece(2, 1); //O
+	tttBoard.placePiece(1, 2); //X wins
+	ASSERT_EQ(tttBoard.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerThirdRowTest){
+	TicTacToeBoard tttBoard;
+	tttBoard.placePiece(2, 0); //X
+	tttBoard.placePiece(1, 2); //O
+	tttBoard.placePiece(2, 1); //X
+	tttBoard.placePiece(0, 1); //O
+	tttBoard.placePiece(2, 2); //X wins
+	ASSERT_EQ(tttBoard.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerFirstColumnTest){
+	TicTacToeBoard tttBoard;
+	tttBoard.placePiece(2, 0); //X
+	tttBoard.placePiece(0, 0); //O
+	tttBoard.placePiece(2, 1); //X
+	tttBoard.placePiece(0, 1); //O
+	tttBoard.placePiece(1, 2); //X
+	tttBoard.placePiece(O, 2); // O wins
+	ASSERT_EQ(tttBoard.getWinner(), O);
+}
+
+TEST(TicTacToeBoardTest, getWinnerSecondColumnTest){
+	TicTacToeBoard tttBoard;
+	tttBoard.placePiece(2, 0); //X
+	tttBoard.placePiece(0, 1); //O
+	tttBoard.placePiece(2, 1); //X
+	tttBoard.placePiece(1, 1); //O
+	tttBoard.placePiece(0, 2); //X
+	tttBoard.placePiece(2, 1); // O wins
+	ASSERT_EQ(tttBoard.getWinner(), O);
+}
+
+TEST(TicTacToeBoardTest, getWinnerThirdColumnTest){
+	TicTacToeBoard tttBoard;
+	tttBoard.placePiece(0, 0); //X
+	tttBoard.placePiece(0, 2); //O
+	tttBoard.placePiece(1, 1); //X
+	tttBoard.placePiece(1, 2); //O
+	tttBoard.placePiece(1, 0); //X
+	tttBoard.placePiece(2, 2); // O wins
+	ASSERT_EQ(tttBoard.getWinner(), O);
+}
+
+TEST(TicTacToeBoardTest, getWinnerFrontSlashTest){
+	TicTacToeBoard tttBoard;
+	tttBoard.placePiece(0, 2); //X
+	tttBoard.placePiece(0, 1); //O
+	tttBoard.placePiece(1, 1); //X
+	tttBoard.placePiece(1, 2); //O
+	tttBoard.placePiece(2, 0); //X
+	ASSERT_EQ(tttBoard.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerBackSlashTest){
+	TicTacToeBoard tttBoard;
+	tttBoard.placePiece(0, 0); //X
+	tttBoard.placePiece(0, 1); //O
+	tttBoard.placePiece(1, 1); //X
+	tttBoard.placePiece(1, 2); //O
+	tttBoard.placePiece(2, 2); //X
+	ASSERT_EQ(tttBoard.getWinner(), X);
+}
