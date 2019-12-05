@@ -87,12 +87,12 @@ TEST(TicTacToeBoardTest, getWinnerThirdRowTest){
 
 TEST(TicTacToeBoardTest, getWinnerFirstColumnTest){
 	TicTacToeBoard tttBoard;
-	tttBoard.placePiece(2, 0); //X
+	tttBoard.placePiece(2, 2); //X
 	tttBoard.placePiece(0, 0); //O
 	tttBoard.placePiece(2, 1); //X
-	tttBoard.placePiece(0, 1); //O
+	tttBoard.placePiece(1, 0); //O
 	tttBoard.placePiece(1, 2); //X
-	tttBoard.placePiece(O, 2); // O wins
+	tttBoard.placePiece(2, 0); // O wins
 	ASSERT_EQ(tttBoard.getWinner(), O);
 }
 
@@ -100,7 +100,7 @@ TEST(TicTacToeBoardTest, getWinnerSecondColumnTest){
 	TicTacToeBoard tttBoard;
 	tttBoard.placePiece(2, 0); //X
 	tttBoard.placePiece(0, 1); //O
-	tttBoard.placePiece(2, 1); //X
+	tttBoard.placePiece(0, 0); //X
 	tttBoard.placePiece(1, 1); //O
 	tttBoard.placePiece(0, 2); //X
 	tttBoard.placePiece(2, 1); // O wins
